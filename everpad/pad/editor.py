@@ -385,20 +385,20 @@ class ContentEdit(QObject):
         image_action.triggered.connect(self._insert_image)
 
         return map(lambda action: self._action_with_icon(*action), (
-            (QWebPage.ToggleBold, 'everpad-text-bold'),
-            (QWebPage.ToggleItalic, 'everpad-text-italic'),
-            (QWebPage.ToggleUnderline, 'everpad-text-underline'),
-            (QWebPage.ToggleStrikethrough, 'everpad-text-strikethrough'),
-            (QWebPage.AlignCenter, 'everpad-justify-center'),
-            (QWebPage.AlignJustified, 'everpad-justify-fill'),
-            (QWebPage.AlignLeft, 'everpad-justify-left'),
-            (QWebPage.AlignRight, 'everpad-justify-right'),
+            (QWebPage.ToggleBold, 'format-text-bold'),
+            (QWebPage.ToggleItalic, 'format-text-italic'),
+            (QWebPage.ToggleUnderline, 'format-text-underline'),
+            (QWebPage.ToggleStrikethrough, 'format-text-strikethrough'),
+            (QWebPage.AlignCenter, 'format-justify-center'),
+            (QWebPage.AlignJustified, 'format-justify-fill'),
+            (QWebPage.AlignLeft, 'format-justify-left'),
+            (QWebPage.AlignRight, 'format-justify-right'),
             (QWebPage.InsertUnorderedList, 'everpad-list-unordered'),
             (QWebPage.InsertOrderedList, 'everpad-list-ordered'),
             (check_action, 'everpad-checkbox', True),
             (table_action, 'everpad-insert-table', True),
-            (link_action, 'everpad-link', True),
-            (image_action, 'everpad-insert-image', True),
+            (link_action, 'insert-link', True),
+            (image_action, 'insert-image', True),
         ))
 
     def paste_res(self, res):
