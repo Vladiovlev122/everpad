@@ -470,14 +470,11 @@ class ContentEdit(QObject):
                 ['format-justify-left', 'everpad-justify-left']),
             (QWebPage.AlignRight,
                 ['format-justify-right', 'everpad-justify-right']),
+            (QWebPage.SetTextDirectionLeftToRight,
+                ['format-text-direction-ltr', 'everpad-text-direction-ltr']),
+            (QWebPage.SetTextDirectionRightToLeft,
+                ['format-text-direction-rtl', 'everpad-text-direction-rtl']),
             ]
-        if self._enable_text_direction_support():
-            actions += [
-                (QWebPage.SetTextDirectionLeftToRight,
-                    ['format-text-direction-ltr', 'everpad-text-direction-ltr']),
-                (QWebPage.SetTextDirectionRightToLeft,
-                    ['format-text-direction-rtl', 'everpad-text-direction-rtl']),
-                ]
         actions += [
             (QWebPage.InsertUnorderedList,
                 ['format-list-unordered', 'everpad-list-unordered']),
