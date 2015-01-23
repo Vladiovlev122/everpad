@@ -34,6 +34,7 @@ class TestBaseTypes(unittest.TestCase):
     def test_give(self):
         class Fake(object):
             id = 0
+
             @property
             def id_dbus(self):
                 return self.id
