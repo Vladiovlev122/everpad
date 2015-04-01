@@ -4,7 +4,7 @@ Name=Everpad
 GenericName=Everpad
 Comment=Evernote client
 Comment[ru]=Клиент для Evernote
-Exec=export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && everpad %U
+Exec=export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && everpad
 Terminal=false
 Icon=everpad.png
 Type=Application
