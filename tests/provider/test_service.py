@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from .. import settings
-
 from dbus.exceptions import DBusException
 from mock import MagicMock
 from everpad.provider.service import ProviderService
@@ -77,15 +76,15 @@ class FindTestCase(unittest.TestCase):
         ]
         self.notes = btype.Note.list << [
             self.service.update_note(note) for note in notes
-        ]
+            ]
 
     def _create_notebooks(self):
         """Create notebooks"""
-        self.notebook =\
+        self.notebook = \
             btype.Notebook << self.service.create_notebook('test', None)
-        self.notebook2 =\
+        self.notebook2 = \
             btype.Notebook << self.service.create_notebook('test2', None)
-        self.notebook3 =\
+        self.notebook3 = \
             btype.Notebook << self.service.create_notebook(u'Блокнот', None)
 
     def _create_service(self):
@@ -432,9 +431,8 @@ class MethodsCase(unittest.TestCase):
         )
         self.session.commit()
 
-        resources_btype = btype.Resource.list << self.service.get_note_resources(
-            note.id,
-        )
+        resources_btype = btype.Resource.list << \
+            self.service.get_note_resources(note.id,)
 
         self.assertEqual(resources_btype[0].file_name, resource.file_name)
 
@@ -463,7 +461,7 @@ class MethodsCase(unittest.TestCase):
 
     def test_create_notebook(self):
         """Test create notebook"""
-        notebook_btype =\
+        notebook_btype = \
             btype.Notebook << self.service.create_notebook('test', 'test')
 
         notebook = self.session.query(models.Notebook).filter(
@@ -474,15 +472,15 @@ class MethodsCase(unittest.TestCase):
     def test_authenticate(self):
         """Test authenticate"""
         self.service.authenticate('test')
-        self.service.qobject\
+        self.service.qobject \
             .remove_authenticate_signal.emit.assert_called_once_with()
-        self.service.qobject\
+        self.service.qobject \
             .authenticate_signal.emit.assert_called_once_with('test')
 
     def test_remove_authentication(self):
         """Test remove authentication"""
         self.service.remove_authentication()
-        self.service.qobject\
+        self.service.qobject \
             .remove_authenticate_signal.emit.assert_called_once_with()
 
     def test_list_places(self):
