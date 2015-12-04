@@ -27,7 +27,6 @@ class FakeApp(QApplication):
 
 app = FakeApp(sys.argv)
 
-
 CONTENTS = [
     u"<ul><li>23</li><li>567</li></ul>",
     u"<p>123</p>\xa0\xa0ok",
@@ -50,11 +49,13 @@ TITLES = [
 
 SET_LINKS = [
     (u"without", u"without"),
-    (u"https://github.com/nvbn/", u'<a href="https://github.com/nvbn/">https://github.com/nvbn/</a>'),
-    (u"https://github.com/nvbn/ http://ya.ru/", u'<a href="https://github.com/nvbn/">https://github.com/nvbn/</a> <a href="http://ya.ru/">http://ya.ru/</a>'),
+    (u"https://github.com/nvbn/",
+     u'<a href="https://github.com/nvbn/">https://github.com/nvbn/</a>'),
+    (u"https://github.com/nvbn/ http://ya.ru/",
+     u'<a href="https://github.com/nvbn/">https://github.com/nvbn/</a> <a '
+     u'href="http://ya.ru/">http://ya.ru/</a>'),
     (u"<p>https://github.com/nvbn/</p>", u"<p>https://github.com/nvbn/</p>"),
 ]
-
 
 if 'test_editor' in os.environ:
     class EditorTestCase(unittest.TestCase):

@@ -9,6 +9,7 @@ class TestBaseTypes(unittest.TestCase):
                 ('id', 'i'),
                 ('name', 's'),
             )
+
         self.assertEqual(
             Fake.signature, '(is)',
             'generate signature',
@@ -18,6 +19,7 @@ class TestBaseTypes(unittest.TestCase):
         class Fake(object):
             id = 0
             name = '123'
+
         tag = Tag.from_obj(Fake())
         self.assertEqual(
             tag.struct, (0, '123'),
@@ -34,6 +36,7 @@ class TestBaseTypes(unittest.TestCase):
     def test_give(self):
         class Fake(object):
             id = 0
+
             @property
             def id_dbus(self):
                 return self.id
@@ -41,6 +44,7 @@ class TestBaseTypes(unittest.TestCase):
             @id_dbus.setter
             def id_dbus(self, val):
                 self.id = val + 12
+
         tag = Tag.from_tuple((0, '123'))
         obj = Fake()
         tag.give_to_obj(obj)

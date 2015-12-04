@@ -12,9 +12,8 @@ requirements = [
     "regex",
     "sqlalchemy",
 ]
-if not 'TRAVIS_CI' in os.environ:
+if 'TRAVIS_CI' not in os.environ:
     requirements.append('PySide')
-
 
 setup(
     name='everpad',
@@ -93,8 +92,10 @@ setup(
         ]),
         ('share/locale/ru/LC_MESSAGES', ['i18n/ru/LC_MESSAGES/everpad.mo']),
         ('share/locale/ar/LC_MESSAGES', ['i18n/ar/LC_MESSAGES/everpad.mo']),
-        ('share/locale/zh_CN/LC_MESSAGES', ['i18n/zh_CN/LC_MESSAGES/everpad.mo']),
-        ('share/locale/zh_TW/LC_MESSAGES', ['i18n/zh_TW/LC_MESSAGES/everpad.mo']),
+        ('share/locale/zh_CN/LC_MESSAGES',
+         ['i18n/zh_CN/LC_MESSAGES/everpad.mo']),
+        ('share/locale/zh_TW/LC_MESSAGES',
+         ['i18n/zh_TW/LC_MESSAGES/everpad.mo']),
         ('share/locale/ja/LC_MESSAGES', ['i18n/ja/LC_MESSAGES/everpad.mo']),
         ('share/locale/es/LC_MESSAGES', ['i18n/es/LC_MESSAGES/everpad.mo']),
         ('share/locale/de/LC_MESSAGES', ['i18n/de/LC_MESSAGES/everpad.mo']),
