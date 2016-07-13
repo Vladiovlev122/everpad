@@ -16,6 +16,7 @@ class SyncThread(QtCore.QThread):
     sync_state_changed = QtCore.Signal(int)
     data_changed = QtCore.Signal()
     status = const.STATUS_NONE
+    sync_state = None
 
     def __init__(self, *args, **kwargs):
         """Init default values"""
@@ -23,8 +24,6 @@ class SyncThread(QtCore.QThread):
         self.app = AppClass.instance()
         self._init_timer()
         self._init_locks()
-        self.status = const.STATUS_NONE
-        self.sync_state = None
 
     def _init_sync(self):
         """Init sync"""
